@@ -6,26 +6,12 @@ import java.util.Scanner; //Import Scanner Object
 public class TicTacToe {
   public static void main(String[] args) {
 
-    //Create a Scanner object
-    int Alex =  MyMenu();    
-
-    if(Alex == 1){
-      TicGame();
-    }
-    else if(Alex == 2){
-      System.out.println("See you next time!");
-      System. exit(0);
-    }
-    else{
-      System.out.println("Please enter a valid number!");
-      System.out.println();
-      System.out.println();
-      Alex = MyMenu();
-    }
+    MyMenu();
+    
   }
 
   //This is the main menu Function
-  static int MyMenu() {
+  static void MyMenu() {
     Scanner Scan = new Scanner(System.in);
     System.out.println("Welcome to Tic Tac Toe!");
     System.out.println("Press 1 to play");
@@ -33,15 +19,30 @@ public class TicTacToe {
     System.out.println("Please Enter an option");
     String decision_string = Scan.nextLine();
     int decision =  Integer.valueOf(decision_string);
-    return decision;
-  }
 
+    if(decision == 1){
+      TicGame();
+    }
+    else if(decision == 2){
+      System.out.println("See you next time!");
+      System. exit(0);
+    }
+    else{
+      System.out.println("Please enter a valid number!");
+      System.out.println();
+      System.out.println();
+      MyMenu();
+    }
+  }
 
   static void TicGame(){
     System.out.println("Lets Begin!");
     System.out.println();
     System.out.println();
-    
+  }
+
+  static void Board(){
+
   }
 
 
