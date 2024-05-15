@@ -7,6 +7,9 @@ import java.util.Random; //Imports Randomizer
 
 
 public class TicTacToe {
+
+  static int Player1;
+  static int Player2;
   public static void main(String[] args) {
     MyMenu();
     TicGame();
@@ -65,16 +68,21 @@ public class TicTacToe {
     if(scoreCheck(Alex) == "Player 1"){
       Board(Alex);
       System.out.println("Player 1 wins!");
+      Player1 = Player1 + 1;
+      score();
       MyMenu();
     }
     if(scoreCheck(Alex) == "Player 2"){
       Board(Alex);
       System.out.println("Player 2 wins!");
+      Player2 = Player2 + 1;
+      score();
       MyMenu();
     }
     if(scoreCheck(Alex) == "Draw"){
       Board(Alex);
       System.out.println("Its a Draw!");
+      score();
       MyMenu();
     }
 
@@ -458,6 +466,9 @@ public class TicTacToe {
     }
     return winner;
   }
-
-
+  
+  static void score(){
+    System.out.println("Player 1's score is: " + Player1);
+    System.out.println("Player 1's score is: " + Player2);
+  }
 }
